@@ -6,7 +6,7 @@ RUN mvn package
 
 FROM node AS REACT
 WORKDIR /tmp
-COPY /web/package.json/  ./
+COPY /web/package.json  ./
 COPY /web/src ./src
 COPY /web/public ./public
 RUN yarn install
