@@ -1,6 +1,7 @@
 FROM maven:openjdk AS MAVEN
 WORKDIR /tmp/
-COPY /src/ ./
+COPY /src/ ./src
+COPY /pom.xml ./
 RUN mvn package
 
 FROM node AS REACT
