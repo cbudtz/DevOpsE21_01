@@ -14,7 +14,7 @@ RUN yarn build
 
 FROM openjdk:14-alpine
 WORKDIR /tmp
-COPY --from=MAVEN /tmp /tmp/
-COPY --from=REACT /tmp /tmp/webapp/
+COPY --from=MAVEN /tmp ./
+COPY --from=REACT /tmp ./webapp/
 
 CMD ["java", "-jar","Heroku01.jar"]
