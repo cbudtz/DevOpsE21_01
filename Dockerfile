@@ -18,3 +18,6 @@ COPY --from=MAVEN /tmp/target ./
 COPY --from=REACT /tmp/build ./src/main/webapp/
 
 CMD ["java", "-jar","Heroku01.jar"]
+
+#for heroku to run the below command to use the heroku.yml file to use docker
+#heroku stack:set container
