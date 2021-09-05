@@ -10,12 +10,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>1.8</maven.compiler.release>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>14</maven.compiler.release>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
         <tomcat.version>9.0.31</tomcat.version>
     </properties>
     <dependencies>
+
         <!--Embedded Tomcat-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -68,6 +69,14 @@
     </dependencies>
     <build>
         <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <release>14</release>
+                    </configuration>
+                </plugin>
             <!-- yarn build -->
             <plugin>
                 <groupId>com.github.eirslett</groupId>
