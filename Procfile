@@ -1,1 +1,1 @@
-web: java -jar Heroku01.jar
+web: java $JAVA_OPTS -jar target/Heroku01.jar
