@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const Greeter = ({name})=>{ return <h3>Ahoy, {name}</h3>}
+    ReactDOM.render(
+        <Greeter name={"Johnny"}></Greeter>, document.getElementById('root') )
+</script>
+</body>
+</html>
