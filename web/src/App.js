@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import {Link, Route} from 'react-router-dom'
+import {About} from "./About";
+import {observer} from "mobx-react-lite";
+import {Todos} from "./TodoStore";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Link to={"/about/hr.bæver"}>Bævere!</Link>
+        <Route path={"/about/:id"} component={About} >
+        </Route>
+          {Todos.todos.map((todo)=>{
+              return <div key={todo.id}>{todo.id} : {todo.name}</div>
+          })}
+          <button onClick={()=>Todos.addTodo({name: "Flere bævere"})}>Add todo!</button>
+
       </header>
     </div>
   );
 }
 
-export default App;
+export default observer(App);
