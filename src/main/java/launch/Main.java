@@ -14,6 +14,7 @@ public class Main {
         String port = Optional.ofNullable(System.getenv("PORT")).orElse("8080"); //Til Heroku
         tomcat.setPort(Integer.parseInt(port));
         tomcat.getConnector(); //Creates a default HTTP connector
+        System.out.println("Listening on Port: " + port);
 
         tomcat.addWebapp("/", new File("src/main/webapp").getAbsolutePath());
         try {
