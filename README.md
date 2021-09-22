@@ -1,4 +1,4 @@
-# Example project showing React and Java-JAX-RS integration using maven
+### Example project showing React and Java-JAX-RS integration using maven
 
 * /tryReact  
   Example on using react w/plain js (no webpack 'n stuff)
