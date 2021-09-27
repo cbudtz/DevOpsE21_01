@@ -1,7 +1,8 @@
 matrix:
   include:
     - language: node_js
+      before_install: cd web
       node_js:
-        - 7
+        - node
       script:
         - yarn test
