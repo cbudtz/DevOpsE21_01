@@ -3,6 +3,4 @@ matrix:
     - language: node_js
       before_install: cd web
       node_js:
-        - node
-      script:
-        - yarn test
+        - 7
