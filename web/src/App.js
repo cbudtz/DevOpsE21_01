@@ -1,23 +1,27 @@
 import './App.css';
-import {Link, Route} from 'react-router-dom'
+import {HashRouter, Link, Route} from 'react-router-dom'
 import {About} from "./About";
 import {observer} from "mobx-react-lite";
-import {Todos} from "./TodoStore";
+import {Giraffes} from "./viewmodel/GiraffeStore";
 
-function App() {
+
+function App(store = Giraffes) {
   return (
+      <HashRouter>
     <div className="App">
       <header className="App-header">
+          <h1>Giraf Butikken</h1>
         <Link to={"/about/hr.bæver"}>Bævere!</Link>
         <Route path={"/about/:id"} component={About} >
         </Route>
-          {Todos.todos.map((todo)=>{
-              return <div key={todo.id}>{todo.id} : {todo.name}</div>
+          {store.giraffes?.map((giraffe)=>{
+              return <div key={giraffe}>{giraffe}</div>
           })}
-          <button onClick={()=>Todos.addTodo({name: "Flere bævere"})}>Add todo!</button>
+          <button onClick={()=>store.addGiraffe("Marius")}>Add Giraffe!</button>
 
       </header>
     </div>
+      </HashRouter>
   );
 }
 
