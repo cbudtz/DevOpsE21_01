@@ -3,7 +3,6 @@ package dto.models;
 import javax.persistence.*;
 
     @Entity
-    @Table
     public class Giraffe {
 
         @Id
@@ -12,6 +11,7 @@ import javax.persistence.*;
         private String name;
 
         public Giraffe() {
+            String s = new String();
         }
 
         public Giraffe(int id, String first_name) {

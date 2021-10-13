@@ -16,6 +16,7 @@ public class Main {
         tomcat.getConnector(); //Creates a default HTTP connector
         System.out.println("Listening on Port: " + port);
 
+
         tomcat.addWebapp("/", new File("src/main/webapp").getAbsolutePath());
         try {
             tomcat.start();
